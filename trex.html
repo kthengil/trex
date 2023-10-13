@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 5px #555;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .status {
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .success {
+            background-color: green;
+        }
+
+        .failed {
+            background-color: red;
+        }
+
+        .not-approved {
+            background-color: orange;
+        }
+
+        .unknown-host {
+            background-color: #777;
+            color: #fff;
+        }
+
+        #output-text {
+            background-color: #012;
+            color: #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+
+
+        textarea{
+            width: 200;
+            height:200px;
+        }
+
+        label{
+            color:#036;
+            font-weight: bold;
+            width:200px;
+        }
+
+        .btn1{
+            color:#fff;
+            background:#036;
+            border-radius:10px;
+            padding:10px;
+        }
+        footer{
+            font-size: .5rem;
+            color: #036;
+            position:absolute;
+            text-align: center;
+            bottom:0;
+            right: 10px;    
+        }
+        header{
+            background: #036;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header> 
+        <svg width="100" viewBox="0 0 172.93633 53.276505" xmlns="http://www.w3.org/2000/svg">
+            <g id="layer1" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -11.573701858520508, -48.49523162841797)">
+              <g id="g12" style="fill:#ffffff;fill-opacity:1">
+                <g id="g10" style="fill:#ffffff;fill-opacity:1">
+                  <path style="stroke: rgb(0, 174, 239); stroke-width: 2px;"/>
+                  <path d="M 136.522 54.281 L 148.143 70.34 C 148.252 70.324 148.351 70.288 148.432 70.218 C 148.9 69.815 148.263 69.49 148.315 69.009 C 148.367 68.528 149.056 69.295 149.536 68.97 C 150.017 68.645 149.082 68.009 149.212 67.619 C 149.341 67.229 150.368 67.931 150.563 67.593 C 150.758 67.255 150.407 66.898 150.537 66.657 C 150.667 66.417 151.46 66.651 151.616 66.436 C 151.771 66.222 151.349 65.819 151.544 65.494 C 151.739 65.17 152.473 65.858 152.798 65.559 C 153.123 65.26 152.616 64.656 152.837 64.396 C 153.058 64.136 153.714 65.13 154.097 64.883 C 154.481 64.637 153.805 64.103 154.117 63.694 C 154.429 63.285 155.163 64.48 155.39 64.442 C 155.618 64.403 155.273 63.714 155.592 63.305 C 155.91 62.895 156.664 64.325 157.145 64.396 C 157.626 64.468 157.223 63.948 157.489 63.487 C 157.756 63.025 158.308 64.364 158.678 64.383 C 159.049 64.403 158.821 64.124 158.925 63.701 C 159.029 63.279 159.439 64.39 159.77 64.598 C 160.101 64.806 160.199 64.786 160.205 64.715 C 160.212 64.643 160.29 64.305 160.582 64.383 C 160.874 64.461 160.836 65.215 162.005 65.163 C 163.174 65.111 163.694 65.864 164.344 66.67 C 164.994 67.476 167.137 68.151 167.8 69.802 C 168.463 71.452 167.631 72.478 167.501 72.478 C 167.372 72.478 166.982 71.984 166.618 72.166 C 166.254 72.348 166.358 71.686 166.072 71.426 C 165.786 71.166 165.708 71.66 165.266 71.971 C 164.825 72.283 165.136 71.829 164.954 71.478 C 164.772 71.127 164.097 71.893 163.785 72.01 C 163.473 72.127 163.486 71.647 163.226 71.205 C 162.966 70.763 162.33 71.646 162.187 71.724 C 162.044 71.802 162.07 71.36 161.81 70.893 C 161.55 70.425 161.069 71.062 160.731 71.465 C 160.393 71.867 160.926 71.958 161.381 71.893 C 161.836 71.828 161.628 72.335 161.602 72.634 C 161.576 72.933 162.979 72.504 163.187 72.439 C 163.395 72.374 163.317 72.634 163.499 73.089 C 163.681 73.543 164.356 72.998 164.512 72.92 C 164.668 72.842 164.785 73.427 164.941 73.505 C 165.097 73.582 165.591 73.284 165.734 73.128 C 165.877 72.972 166.124 73.595 166.305 73.699 C 166.487 73.803 167.072 73.4 167.176 73.4 C 167.28 73.4 167.176 74.206 166.786 74.687 C 166.396 75.168 165.486 75.128 163.537 75.024 C 161.588 74.92 161.562 75.596 159.873 75.596 C 158.184 75.596 157.456 75.518 156 75.648 C 154.545 75.778 153.09 78.871 152.336 80.248 C 151.582 81.626 148.49 82.899 148.282 83.289 C 148.074 83.679 148.828 84.328 149.659 85.108 C 150.491 85.888 150.283 86.719 149.867 87.603 C 149.451 88.486 148.724 88.175 148.36 88.097 C 147.996 88.019 148.594 87.057 148.594 86.641 C 148.594 86.226 147.503 86.148 147.503 86.148 C 147.503 86.148 147.477 88.539 147.217 88.954 C 146.957 89.37 145.554 89.37 145.086 89.318 C 144.618 89.266 145.19 88.799 145.657 88.357 C 146.125 87.915 146.021 87.317 145.943 86.33 C 145.865 85.342 145.45 85.966 144.332 86.875 C 143.305 87.712 140.739 87.691 140.05 88.026 L 139.857 88.259 C 139.691 89.033 140.564 92.064 140.226 93.996 C 140.136 94.51 139.787 95.065 139.312 95.621 L 151.928 101.765 L 161.193 88.375 L 170.77 101.611 L 183.358 97.147 L 170.199 75.36 L 184.513 54.674 L 172.681 48.479 L 161.874 61.577 L 154.056 48.633 Z" style="stroke-width: 2px;"/>
+                </g>
+                <path d="M 34.2 64.054 L 34.2 95.603 L 26.423000000000002 95.603 L 26.423000000000002 64.054 L 11.591 64.054 L 14.175 57.853 L 49.031 57.853 L 46.447 64.054 L 34.2 64.054 Z" style="stroke-width: 2px;"/>
+                <path d="M 118.207 89.376 L 133.994 89.376 L 131.41 95.603 L 115.623 95.603 L 118.207 89.376 Z" style="stroke-width: 2px;"/>
+                <path d="M 118.207 76.482 L 133.089 76.482 L 130.506 82.709 L 115.623 82.709 L 118.207 76.482 Z" style="stroke-width: 2px;"/>
+                <path d="M 115.623 95.603 L 107.845 95.603 L 107.845 64.106 L 133.994 64.106 L 131.41 70.333 L 115.623 70.333 L 115.623 95.603 Z" style="stroke-width: 2px;"/>
+                <path d="M 82.632 95.603 L 74.854 95.603 L 74.854 64.106 L 94.879 64.106 C 97.89366666666666 64.106 100.43433333333333 65.131 102.501 67.181 C 104.34433333333334 69.041 105.266 71.65066666666667 105.266 75.01 C 105.266 78.36866666666667 104.34433333333334 80.96966666666667 102.501 82.813 C 101.175 84.13900000000001 99.59033333333333 85.04333333333334 97.747 85.526 L 106.454 95.603 L 97.024 95.603 L 88.652 85.913 L 82.632 85.913 L 85.215 79.66 L 94.879 79.66 C 95.43033333333334 79.66 95.947 79.419 96.429 78.937 C 97.13566666666667 78.24766666666667 97.489 76.93866666666668 97.489 75.01 C 97.489 73.06333333333333 97.13566666666667 71.74533333333333 96.429 71.056 C 95.947 70.574 95.43033333333334 70.333 94.879 70.333 L 82.632 70.333 L 82.632 95.603 Z" style="stroke-width: 2px;"/>
+                <path d="M 71.005 74.622 L 71.005 80.849 L 50.929 80.849 L 50.929 74.622 L 71.005 74.622 Z" style="stroke-width: 2px;"/>
+              </g>
+            </g>
+          </svg>
+    </header>    
+
+    <div id="container">
+    
+
+
+        <form id="command-form">
+            <label for="command">Command</label><br>
+            <input type="text" id="command" name="command" required><br><br>
+            <label for="servers">Server(s)</label><br>
+            <textarea id="servers" name="servers" required></textarea><br><br>
+            
+
+            <input class="btn1" type="submit" value="Execute Command">
+        </form>
+        <div id="progress-indicator"></div>
+
+        <div id="output">
+        </div>
+    </div>
+
+    <script>
+        const commandForm = document.getElementById('command-form');
+        const outputDiv = document.getElementById('output');
+
+        commandForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const serverNames = document.getElementById('servers').value.split('\n').map(s => s.trim());
+            const rawCommand = document.getElementById('command').value;
+            const command = encodeURIComponent(rawCommand);
+
+            outputDiv.innerHTML = ''; 
+
+            serverNames.forEach(serverName => {
+                // Make the HTTP request for each server
+                fetch(`http://127.0.0.1:5000/cmd?server=${serverName}&command=${command}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        let statusText = "";
+                        let formattedOutput = data.command_output;
+
+                        if (data.command_output.includes("Name or service not known")) {
+                            statusText = "Status: Unknown Host";
+                            statusText = `<div class="status unknown-host">${statusText}</div>`;
+                            formattedOutput = ""; 
+                        } else if (data.command_output.includes("Failed with Error")) {
+                            statusText = "Status: Failed";
+                            statusText = `<div class="status failed">${statusText}</div>`;
+                            formattedOutput = formattedOutput.replace("Failed with Error: ", "!");
+                        } else if (data.command_output.includes("Command not Approved")) {
+                            statusText = "Status: Command Not Approved";
+                            formattedOutput = `Approved Commands: ${data.approved_commands.join(", ")}`;
+                            statusText = `<div class="status not-approved">${statusText}</div>`;
+                        }  else {
+                            statusText = "Status: Success";
+                            statusText = `<div class="status success">${statusText}</div>`;
+                            
+                            if (formattedOutput.startsWith("Execution Success: ")) {
+                                formattedOutput = formattedOutput.substring("Execution Success: ".length);
+                            }
+                          
+                            formattedOutput = formatAsTable(formattedOutput);
+                        }
+
+
+                        formattedOutput = `${getCurrentDateTime(serverName)} $ ${rawCommand} <br>${formattedOutput}`;
+
+                        if (!statusText.includes("Unknown Host")) {
+                            outputDiv.innerHTML += `${statusText}<div id="output-text">${formattedOutput}</div><br>`;
+                        } else {
+                            outputDiv.innerHTML += `${statusText}<br>`;
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching data:", error);
+                    });
+            });
+        });
+
+        function formatAsTable(output) {
+            const lines = output.split('\n');
+            if (lines.length < 2) {
+                return output; 
+            }
+            
+            const headers = lines[0].split(' ');
+            const formattedOutput = [];
+
+            formattedOutput.push(headers.join(' ')); 
+            for (let i = 1; i < lines.length; i++) {
+                const columns = lines[i].split(' ');
+                formattedOutput.push(columns.join(' '));
+            }
+
+            return formattedOutput.join('<br>');
+        }
+
+        function getCurrentDateTime(serverName) {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.toLocaleString('default', { month: 'short' });
+            const day = now.getDate();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            return `${serverName} (${year} ${month} ${day} ${hours}:${minutes})`;
+        }
+    </script>
+    <footer>
+        Terminal for Remote command eXecution
+    </footer>
+</body>
+</html>
